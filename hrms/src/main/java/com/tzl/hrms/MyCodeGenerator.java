@@ -49,8 +49,8 @@ public class MyCodeGenerator {
         dsc.setDbType(DbType.MYSQL);
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("mainyi");
-        dsc.setUrl("jdbc:mysql://localhost:3306/mybatiesplus?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true");
+        dsc.setPassword("654321");
+        dsc.setUrl("jdbc:mysql://localhost:3306/hrms?serverTimezone=UTC");
         mpg.setDataSource(dsc);
 
         // 策略配置
