@@ -11,4 +11,8 @@ import javax.annotation.Resource;
 @Controller
 public class TestController {
 
+    public void test(){
+        System.out.println("测试");
+    }
+
 }
