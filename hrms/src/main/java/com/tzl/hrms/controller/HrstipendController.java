@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 @RequestMapping("/hrstipend")
+//<a href="stipend">薪金管理</a>
 public class HrstipendController {
 
 }

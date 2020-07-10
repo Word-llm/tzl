@@ -1,5 +1,6 @@
-package com.tzl.hrms.pojo;
+package com.tzl.hrms.controller;
 
+import com.tzl.hrms.pojo.Hruser;
 import com.tzl.hrms.service.HruserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

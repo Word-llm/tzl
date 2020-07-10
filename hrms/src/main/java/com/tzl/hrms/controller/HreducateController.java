@@ -15,6 +15,7 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 @RequestMapping("/hreducate")
+//<a href="educate">培训管理</a>
 public class HreducateController {
 
 }
