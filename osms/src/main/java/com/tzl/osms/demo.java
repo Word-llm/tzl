@@ -11,7 +11,7 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//123
 public class demo {
 
     public static void main(String[] args) {
