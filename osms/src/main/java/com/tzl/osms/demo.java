@@ -12,18 +12,14 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author 木头
- * @date 2020/7/5 14:59
- */
-public class MyCodeGenerator {
-    public static void main(String[] args) {
+public class demo {
 
+    public static void main(String[] args) {
         InjectionConfig injectionConfig = new InjectionConfig() {
             @Override
             public void initMap() {
-                Map<String,Object> map = new HashMap<>();
-                map.put("abc",this.getConfig().getGlobalConfig().getAuthor()+"-mp");
+                Map<String, Object> map = new HashMap<>();
+                map.put("abc", this.getConfig().getGlobalConfig().getAuthor() + "-mp");
                 this.setMap(map);
             }
         };
@@ -33,9 +29,8 @@ public class MyCodeGenerator {
 
         //全局配置
         GlobalConfig gc = new GlobalConfig();
-        gc.setAuthor("xzh");
-        String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir(projectPath+"/src/main/java");
+        gc.setAuthor("沐纤云");
+        gc.setOutputDir("D:/SpringWork/tzl/osms/src/main/java");
         gc.setFileOverride(false);// 是否覆盖同名文件，默认是false
         gc.setActiveRecord(true);// 不需要ActiveRecord特性的请改为false
         gc.setEnableCache(false);// XML 二级缓存
@@ -49,23 +44,23 @@ public class MyCodeGenerator {
         dsc.setDbType(DbType.MYSQL);
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("mainyi");
-        dsc.setUrl("jdbc:mysql://localhost:3306/mybatiesplus?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true");
+        dsc.setPassword("mxy12345");
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3306/omos?useUnicode=true&useSSL=false&characterEncoding=utf-8&serverTimezone=Hongkong");
         mpg.setDataSource(dsc);
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setNaming(NamingStrategy.no_change);// 表名生成策略
-        strategy.setInclude("user"); // 需要生成的表
+        strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
+        strategy.setColumnNaming(NamingStrategy.underline_to_camel);
+        strategy.setInclude("user", "commodity_message", "admin", "commodity_class", "order", "order_list"); // 需要生成的表名
         mpg.setStrategy(strategy);
 
         //包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.llm.demo");
-//      pc.setModuleName("test");
+        pc.setParent("com.tzl.osms");
         mpg.setPackageInfo(pc);
 
         mpg.execute();
-
     }
+
 }
