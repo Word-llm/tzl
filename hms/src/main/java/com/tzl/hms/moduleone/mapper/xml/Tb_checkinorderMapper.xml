@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tzl.hms.moduleone.mapper.Tb_checkinorderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tzl.hms.moduleone.entity.Tb_checkinorder">
+        <id column="cio_id" property="cio_id" />
+        <result column="checkin_items" property="checkin_items" />
+        <result column="cio_guest_name" property="cio_guest_name" />
+        <result column="cio_man_number" property="cio_man_number" />
+        <result column="cio_guest_catalog" property="cio_guest_catalog" />
+        <result column="cio_guest_type" property="cio_guest_type" />
+        <result column="cio_group_name" property="cio_group_name" />
+        <result column="cio_guest_card_catalog" property="cio_guest_card_catalog" />
+        <result column="cio_guest_card_id" property="cio_guest_card_id" />
+        <result column="cio_cause" property="cio_cause" />
+        <result column="cio_state" property="cio_state" />
+        <result column="cio_in_date_time" property="cio_in_date_time" />
+        <result column="cio_pre_out_date_time" property="cio_pre_out_date_time" />
+        <result column="cio_prc_out_date_time" property="cio_prc_out_date_time" />
+        <result column="cio_payment_model" property="cio_payment_model" />
+        <result column="cio_paid_money" property="cio_paid_money" />
+        <result column="cio_is_reserv_id" property="cio_is_reserv_id" />
+        <result column="cio_operator" property="cio_operator" />
+        <result column="cio_guest_gender" property="cio_guest_gender" />
+        <result column="cio_tota_rate" property="cio_tota_rate" />
+        <result column="cio_red_rate" property="cio_red_rate" />
+        <result column="cio_order_id" property="cio_order_id" />
+    </resultMap>
+
+</mapper>

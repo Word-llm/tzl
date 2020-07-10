@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tzl.hms.moduleone.mapper.Tb_checkinitemMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tzl.hms.moduleone.entity.Tb_checkinitem">
+        <id column="cim_id" property="cim_id" />
+        <result column="checkin_order" property="checkin_order" />
+        <result column="room" property="room" />
+        <result column="cim_prct_price" property="cim_prct_price" />
+        <result column="cim_discount" property="cim_discount" />
+        <result column="cim_in_datetime" property="cim_in_datetime" />
+        <result column="cim_out_datetime" property="cim_out_datetime" />
+        <result column="cim_state" property="cim_state" />
+    </resultMap>
+
+</mapper>

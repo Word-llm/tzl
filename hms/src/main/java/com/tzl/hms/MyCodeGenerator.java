@@ -33,9 +33,8 @@ public class MyCodeGenerator {
         //全局配置
         GlobalConfig gc = new GlobalConfig();
         gc.setAuthor("xzh");
-        String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir(projectPath+"/src/main/java");
-        gc.setFileOverride(false);// 是否覆盖同名文件，默认是false
+        gc.setOutputDir("D:/ideaMaven/tzlcdp/hms/src/main/java");
+        gc.setFileOverride(true);// 是否覆盖同名文件，默认是false
         gc.setActiveRecord(true);// 不需要ActiveRecord特性的请改为false
         gc.setEnableCache(false);// XML 二级缓存
         gc.setBaseResultMap(true);// XML ResultMap
@@ -49,19 +48,19 @@ public class MyCodeGenerator {
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("mainyi");
-        dsc.setUrl("jdbc:mysql://localhost:3306/mybatiesplus?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true");
+        dsc.setUrl("jdbc:mysql://localhost:3306/hms?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true");
         mpg.setDataSource(dsc);
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.no_change);// 表名生成策略
-        strategy.setInclude("user"); // 需要生成的表
+        strategy.setInclude("tb_balancement","tb_checkinitem","tb_checkinorder","tb_guest","tb_operator","tb_room","tb_roomcatalog"); // 需要生成的表
         mpg.setStrategy(strategy);
 
         //包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.llm.demo");
-//      pc.setModuleName("test");
+        pc.setModuleName("moduleone");
+        pc.setParent("com.tzl.hms");
         mpg.setPackageInfo(pc);
 
         mpg.execute();
