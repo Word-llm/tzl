@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tzl.hms.moduleone.mapper.TbBalancementMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tzl.hms.moduleone.entity.TbBalancement">
+        <id column="bm_id" property="bmId" />
+        <result column="bm_checkin_order_id" property="bmCheckinOrderId" />
+        <result column="bm_guset_id" property="bmGusetId" />
+        <result column="bm_type" property="bmType" />
+        <result column="bm_total_rate" property="bmTotalRate" />
+        <result column="bm_paid_money" property="bmPaidMoney" />
+        <result column="bm_receiv_money" property="bmReceivMoney" />
+        <result column="bm_create_time" property="bmCreateTime" />
+        <result column="bm_operator" property="bmOperator" />
+        <result column="bm_payment_model" property="bmPaymentModel" />
+        <result column="bm_remark" property="bmRemark" />
+    </resultMap>
+
+</mapper>

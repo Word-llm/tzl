@@ -40,6 +40,7 @@ public class MyCodeGenerator {
         gc.setBaseResultMap(true);// XML ResultMap
         gc.setBaseColumnList(false);// XML columList
         gc.setOpen(false);
+        gc.setServiceName("%sService");
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
@@ -53,7 +54,8 @@ public class MyCodeGenerator {
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
-        strategy.setNaming(NamingStrategy.no_change);// 表名生成策略
+        strategy.setNaming(NamingStrategy.underline_to_camel);
+        strategy.setColumnNaming(NamingStrategy.underline_to_camel);
         strategy.setInclude("tb_balancement","tb_checkinitem","tb_checkinorder","tb_guest","tb_operator","tb_room","tb_roomcatalog"); // 需要生成的表
         mpg.setStrategy(strategy);
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tzl.hms.moduleone.mapper.TbRoomcatalogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tzl.hms.moduleone.entity.TbRoomcatalog">
+        <id column="rc_id" property="rcId" />
+        <result column="rc_name" property="rcName" />
+        <result column="rc_bed_number" property="rcBedNumber" />
+        <result column="rc_pre_price" property="rcPrePrice" />
+        <result column="rc_pre_discount" property="rcPreDiscount" />
+        <result column="rc_hour_base_price" property="rcHourBasePrice" />
+        <result column="rc_per_hour_price" property="rcPerHourPrice" />
+    </resultMap>
+
+</mapper>
