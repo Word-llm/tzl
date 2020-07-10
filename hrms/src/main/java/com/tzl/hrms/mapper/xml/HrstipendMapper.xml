@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tzl.hrms.mapper.HrstipendMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tzl.hrms.pojo.Hrstipend">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="basic" property="basic" />
+        <result column="eat" property="eat" />
+        <result column="house" property="house" />
+        <result column="granttime" property="granttime" />
+        <result column="scot" property="scot" />
+        <result column="duty" property="duty" />
+        <result column="punishment" property="punishment" />
+        <result column="other" property="other" />
+        <result column="totalize" property="totalize" />
+    </resultMap>
+
+</mapper>

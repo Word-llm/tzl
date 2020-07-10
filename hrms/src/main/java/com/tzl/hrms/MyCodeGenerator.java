@@ -33,10 +33,11 @@ public class MyCodeGenerator {
 
         //全局配置
         GlobalConfig gc = new GlobalConfig();
-        gc.setAuthor("xzh");
+        gc.setAuthor("Jl");
         String projectPath = System.getProperty("user.dir");
-        gc.setOutputDir(projectPath+"/src/main/java");
-        gc.setFileOverride(false);// 是否覆盖同名文件，默认是false
+        gc.setOutputDir(projectPath+"/hrms/src/main/java");
+        gc.setServiceName("%sService");
+        gc.setFileOverride(true);// 是否覆盖同名文件，默认是false
         gc.setActiveRecord(true);// 不需要ActiveRecord特性的请改为false
         gc.setEnableCache(false);// XML 二级缓存
         gc.setBaseResultMap(true);// XML ResultMap
@@ -57,11 +58,16 @@ public class MyCodeGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.no_change);// 表名生成策略
         strategy.setInclude("user"); // 需要生成的表
+        strategy.setInclude("hreducate","hrinstitution","hrjob","hrstipend","hruser");
         mpg.setStrategy(strategy);
 
         //包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.llm.demo");
+        pc.setParent("com.tzl.hrms");
+        pc.setEntity("pojo");
+        pc.setMapper("mapper");
+        pc.setService("service");
+        pc.setController("controller");
 //      pc.setModuleName("test");
         mpg.setPackageInfo(pc);
 
