@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tzl.hms.moduleone.mapper.TbGuestMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tzl.hms.moduleone.entity.TbGuest">
+        <id column="gt_id" property="gtId" />
+        <result column="gt_name" property="gtName" />
+        <result column="gt_type" property="gtType" />
+        <result column="gt_card_catalog" property="gtCardCatalog" />
+        <result column="gt_card_id" property="gtCardId" />
+        <result column="gt_country" property="gtCountry" />
+        <result column="gt_address" property="gtAddress" />
+        <result column="gt_zip" property="gtZip" />
+        <result column="gt_company" property="gtCompany" />
+        <result column="gt_telphone" property="gtTelphone" />
+        <result column="gt_mobile" property="gtMobile" />
+        <result column="gt_gender" property="gtGender" />
+        <result column="gt_email" property="gtEmail" />
+        <result column="gt_greate_time" property="gtGreateTime" />
+    </resultMap>
+
+</mapper>
