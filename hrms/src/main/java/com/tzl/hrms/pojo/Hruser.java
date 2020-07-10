@@ -3,7 +3,9 @@ package com.tzl.hrms.pojo;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+
 import java.time.LocalDate;
+
 import com.baomidou.mybatisplus.annotation.TableId;
 
 import javax.persistence.Entity;
@@ -11,7 +13,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author Jl
@@ -21,7 +23,7 @@ import java.io.Serializable;
 @TableName("Hruser")
 public class Hruser extends Model<Hruser> {
 
-    private static final long serialVersionUID=1L;
+    private static final long serialVersionUID = 1L;
 
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
@@ -113,14 +115,14 @@ public class Hruser extends Model<Hruser> {
     @Override
     public String toString() {
         return "Hruser{" +
-        "id=" + id +
-        ", username=" + username +
-        ", password=" + password +
-        ", sex=" + sex +
-        ", birthday=" + birthday +
-        ", createtime=" + createtime +
-        ", isadmin=" + isadmin +
-        ", content=" + content +
-        "}";
+                "id=" + id +
+                ", username=" + username +
+                ", password=" + password +
+                ", sex=" + sex +
+                ", birthday=" + birthday +
+                ", createtime=" + createtime +
+                ", isadmin=" + isadmin +
+                ", content=" + content +
+                "}";
     }
 }
