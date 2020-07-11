@@ -38,11 +38,19 @@ public class LoginController {
         return "frame/login";
     }
 
+
+
+
+
+
+
     /**
      * 检验登录的人是否存在数据库并且判断为管理员还是普通用户
      */
     @RequestMapping("/login_checkout")
     public @ResponseBody String loginCheckout(String userName, String password) {
+        System.out.println("userName = " + userName);
+        System.out.println("password = " + password);
         QueryWrapper<TbOperator> wrapper = new QueryWrapper<>();
         wrapper.eq("op_user_name", userName);
         wrapper.eq("op_password", password);
@@ -51,45 +59,47 @@ public class LoginController {
         if (tbOperator == null) {
             if ("".equals(userName) && "".equals(password)) {
                 //请输入用户名和密码
-                JSONArray fromObject = JSONArray.fromObject("['npn']");
-                return fromObject.toString();
+                return JSONArray.fromObject("['npn']").toString();
             }
             if ("".equals(userName)) {
                 //用户名为空，输入用户
-                JSONArray fromObject = JSONArray.fromObject("['nn']");
-                return fromObject.toString();
+                return JSONArray.fromObject("['nn']").toString();
             }
             if ("".equals(password)) {
                 //密码为空请输入密码
-                JSONArray fromObject = JSONArray.fromObject("['pn']");
-                return fromObject.toString();
+                return JSONArray.fromObject("['pn']").toString();
             }
             if (userName.length() != 0 && password.length() != 0) {
 
-                //用户名和密码输入错误，请重新输入用户名和密码
-                JSONArray fromObject = JSONArray.fromObject("['npc']");
-                return fromObject.toString();
-            }
-            if (userName.length() != 0) {
+                QueryWrapper<TbOperator> wrapper1 = new QueryWrapper<>();
+                wrapper1.eq("op_user_name", userName);
+                TbOperator tbOperator1 = tbOperatorService.getOne(wrapper1);
 
-                //用户名输入错去，请重新输入用户名
-                JSONArray fromObject = JSONArray.fromObject("'[nc']");
-                return fromObject.toString();
-            }
-            if (password.length() != 0) {
+                QueryWrapper<TbOperator> wrapper2 = new QueryWrapper<>();
+                wrapper2.eq("op_password", password);
+                TbOperator tbOperator2 = tbOperatorService.getOne(wrapper2);
+                if(tbOperator1 == null && tbOperator2==null){
+                    //用户名和密码输入错误，请重新输入用户名和密码
+                    return JSONArray.fromObject("['npc']").toString();
+                }
+                if (tbOperator1 == null) {
+                    //用户名输入错去，请重新输入用户名
+                    return JSONArray.fromObject("'[nc']").toString();
+                }else{
 
-                //密码输入错去，请重新输入密码
-                JSONArray fromObject = JSONArray.fromObject("['pc']");
-                return fromObject.toString();
-            }
+                    if (!(password.equals(tbOperator1.getOpPassword()))) {
+                        //密码输入错去，请重新输入密码
+                        return JSONArray.fromObject("['pc']").toString();
+                    }
+                }
 
+
+            }
         }
         if (tbOperator.getOpPrivilege() == 1) {
-            JSONArray fromObject = JSONArray.fromObject("['1']");
-            return fromObject.toString();
+            return JSONArray.fromObject("['1']").toString();
         } else {
-            JSONArray fromObject = JSONArray.fromObject("['0']");
-            return fromObject.toString();
+            return JSONArray.fromObject("['0']").toString();
         }
     }
 

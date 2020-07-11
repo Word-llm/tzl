@@ -10,7 +10,7 @@
             $.post("login_checkout",{"userName":userName,"password":password},function(data){
                 var temp = JSON.parse(data);
                 if(temp[0]=='0'){
-                    window.location = "frame/domestic";
+                    window.location = "domestic.html";
                 }
                 if(temp[0]=='1'){
                     window.location = "frame/administrator";
@@ -46,7 +46,7 @@
         </div>
     </div>
     <div style="text-align:center;margin-top:10px; border:0px #FF0000 solid;">
-        <form name="newsp_form" style="margin:0" action="login_checkout" method="post">
+<!--        <form name="newsp_form" style="margin:0" action="login_checkout" method="post">-->
             <table id="__01" border="0" cellpadding="0" cellspacing="0" style="padding-left: 170px;padding-top: 80px">
                 <tr>
                     <td style="font-size:12px;">用户名：</td>
@@ -66,7 +66,7 @@
                     </td>
                 </tr>
             </table>
-        </form>
+<!--        </form>-->
     </div>
 </div>
 </body>
