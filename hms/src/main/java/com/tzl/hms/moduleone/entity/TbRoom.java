@@ -24,6 +24,22 @@ public class TbRoom extends Model<TbRoom> {
     private static final long serialVersionUID=1L;
 
     /**
+     * 客房状态
+     */
+    public static final String[] STATES = {"空闲","预定","租用","结账","清洁","锁房"};
+    /**
+     * 客房颜色状态数组
+     */
+    public static final String[] COLORSTATES = {"#008CD2","#FF7D00","#FFE000","#E40090","#00AF4D","#E80033"};
+    public static final Integer STATE_VACANT = 0;   //空闲状态
+    public static final Integer STATE_RESERVED = 1; //预定状态
+    public static final Integer STATE_RENTED = 2;   //租用状态
+    public static final Integer STATE_CHECKOUT = 3; //结账状态
+    public static final Integer STATE_CLEANED = 4;  //清洁状态
+    public static final Integer STATE_BLOCKED = 5;  //锁房状态
+
+
+    /**
      * 客房编号
      */
     @TableId(value = "rm_id", type = IdType.AUTO)

@@ -13,6 +13,8 @@ spring:
     active: dev
   resources:
     static-locations: classpath:/static/,classpath:/templates/
+  mvc:
+    static-path-pattern: /static/**
 # mybatis-plus相关配置
 mybatis-plus:
   # 以下配置均有默认值,可以不设置

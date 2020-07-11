@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
+import sun.security.provider.PolicySpiFile;
 
 import javax.persistence.Entity;
 import java.time.LocalDateTime;
@@ -23,11 +24,13 @@ public class TbOperator extends Model<TbOperator> {
 
     private static final long serialVersionUID=1L;
 
+    public static final Integer PRIVILEGE_USER = 0; //普通操作员
+    public static final Integer PRIVILEGE_ADMIN = 1;    //管理员
+
     /**
      * 操作员用户名
      */
-    @TableId(value = "op_user_name", type = IdType.AUTO)
-    private Integer opUserName;
+    private String opUserName;
 
     /**
      * 操作员密码
@@ -37,7 +40,7 @@ public class TbOperator extends Model<TbOperator> {
     /**
      * 操作员权限
      */
-    private String opPrivilege;
+    private Integer opPrivilege;
 
     /**
      * 地址
@@ -70,11 +73,11 @@ public class TbOperator extends Model<TbOperator> {
     private LocalDateTime opCreateTime;
 
 
-    public Integer getOpUserName() {
+    public String getOpUserName() {
         return opUserName;
     }
 
-    public void setOpUserName(Integer opUserName) {
+    public void setOpUserName(String opUserName) {
         this.opUserName = opUserName;
     }
 
@@ -86,11 +89,12 @@ public class TbOperator extends Model<TbOperator> {
         this.opPassword = opPassword;
     }
 
-    public String getOpPrivilege() {
+
+    public Integer getOpPrivilege() {
         return opPrivilege;
     }
 
-    public void setOpPrivilege(String opPrivilege) {
+    public void setOpPrivilege(Integer opPrivilege) {
         this.opPrivilege = opPrivilege;
     }
 
