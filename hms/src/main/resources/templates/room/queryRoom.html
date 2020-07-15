@@ -7,9 +7,36 @@
 </head>
 <body>
     <tr th:each="room : ${list}">
-        <div style="float: left;border:1px black solid;margin-left: 45px;">
-            <img th:src="'../../static/images/'+${room.rmPicture}"/>
-            <p style="margin-left: 45px" th:text="${room.rmId}"></p>
-        </div>
+            <div th:if="${room.rmState}==${roomStateTemp}" style="float: left;border:1px gray solid;margin-left: 45px;">
+                <img th:src="'../../static/images/'+${room.rmPicture}"/>
+                <p style="margin-left: 45px" th:text="${room.rmId}"></p>
+            </div>
     </tr>
+    <h4 style="position: absolute;top: 670px;left: 350px">已出租</h4>
+    <div style="border: 0px red solid;width: 220px;height: 50px;position: absolute;top: 670px;left: 500px">
+        <li>
+            <a style="text-decoration: none" id="time"></a>
+            <script th:inline="javascript">
+                /*<![CDATA[*/
+                function setTime(){
+                    var dt=new Date();
+                    var arr_week=new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+                    var strWeek=arr_week[dt.getDay()];
+                    var strHour=dt.getHours();
+                    var strMinutes=dt.getMinutes();
+                    var strSeconds=dt.getSeconds();
+                    if (strMinutes<10) strMinutes="0"+strMinutes;
+                    if (strSeconds<10) strSeconds="0"+strSeconds;
+                    var strYear=dt.getFullYear()+"年";
+                    var strMonth=(dt.getMonth()+1)+"月";
+                    var strDay=dt.getDate()+"日";
+                    <!--var strTime=strHour+":"+strMinutes+":"+strSeconds;-->
+                    strTime=strHour+":"+strMinutes;
+                    time.innerHTML=strYear+strMonth+strDay+" "+strTime+"  "+strWeek;
+                }
+                setInterval("setTime()",1000);
+                /*]]>*/
+            </script>
+        </li>
+    </div>
 </body>

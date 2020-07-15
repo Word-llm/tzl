@@ -25,12 +25,10 @@ public class LoginController {
      *
      * @return
      */
-    @RequestMapping({"/JavaPrj_9", "","/login"})
+    @RequestMapping({"/JavaPrj_9", "", "/login"})
     public String loginMethod() {
         return "frame/login";
     }
-
-
 
 
     /**
@@ -44,7 +42,6 @@ public class LoginController {
     }
 
 
-
     /**
      * 跳转管理员管理页面
      *
@@ -56,14 +53,12 @@ public class LoginController {
     }
 
 
-
-
-
     /**
      * 检验登录的人是否存在数据库并且判断为管理员还是普通用户
      */
     @RequestMapping("/login_checkout")
-    public @ResponseBody String loginCheckout(String userName, String password) {
+    public @ResponseBody
+    String loginCheckout(String userName, String password) {
         QueryWrapper<TbOperator> wrapper = new QueryWrapper<>();
         wrapper.eq("op_user_name", userName);
         wrapper.eq("op_password", password);
@@ -84,56 +79,6 @@ public class LoginController {
             return JSONArray.fromObject("['0']").toString();
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     /**

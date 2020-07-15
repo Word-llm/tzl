@@ -4,6 +4,7 @@ package com.tzl.hms.moduleone.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * <p>
@@ -16,6 +17,15 @@ import org.springframework.stereotype.Controller;
 @Controller
 @RequestMapping("/moduleone/tbGuest")
 public class TbGuestController {
+
+
+    @RequestMapping("/guestAdd")
+    public ModelAndView guestQuery(){
+        ModelAndView mav = new ModelAndView();
+
+        return mav;
+    }
+
 
 }
 

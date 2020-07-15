@@ -32,6 +32,7 @@ public class TbRoomController {
         System.out.println("====ka;slpoirpo234q23oipjfklasjdf;=========");
         List<TbRoom> list = tbRoomService.list();
         mav.addObject("list",list);
+        mav.addObject("roomStateTemp",TbRoom.STATE_RENTED);
         mav.setViewName("room/queryRoom");
         list.forEach(System.out::println);
         return mav;
