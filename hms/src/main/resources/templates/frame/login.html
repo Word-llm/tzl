@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8"/>
     <title>登录</title>
-    <link type="text/css" rel="stylesheet" href="../static/css/login.css">
-    <script type="text/javascript" src="../static/js/jquery-3.4.1.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../static/css/login.css">
+    <script type="text/javascript" src="../../static/js/jquery-3.4.1.min.js"></script>
 </head>
 <body bgcolor="#cccccc">
-<div style="position: absolute;top: 240px;left :650px;border: 1px #000000 solid;background:url(../static/images/index.jpg) no-repeat;width:588px; height:347px;">
+<div style="position: absolute;top: 240px;left :650px;border: 1px #000000 solid;background:url(../../static/images/index.jpg) no-repeat;width:588px; height:347px;">
     <div style=" width:588px;">
         <div style="color:#508e46; float:left; font-size:32px; margin-top:28px; padding-left:200px; font-weight:bold;">
             酒店管理系统
@@ -43,10 +43,10 @@
         $.post("login_checkout",{"userName":$('#userName').val(),"password":$('#password').val()},function(data){
             var temp = JSON.parse(data);
             if(temp[0]=='0'){
-                window.location.href = "domestic.html";
+                window.location = "domestic";
             }
             if(temp[0]=='1'){
-                window.location.href = "administrator.html";
+                window.location = "administrator";
             }
             if(temp[0]=='npn'){
                 alert("用户名或密码不能为空，请输入用户名和密码");

@@ -3,7 +3,55 @@
 <head>
     <meta charset="UTF-8"/>
     <title>普通用户</title>
+    <link type="text/css" rel="stylesheet" href="../../static/css/login.css">
+    <link type="text/css" rel="stylesheet" href="../../static/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="../../static/css/bootstrap-theme.css">
+    <script type="text/javascript" src="../../static/js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
-    普通用户登录页面开发中。。。。。。。。。。。。
+<div class="col-md-12 column domestic_div">
+    <h1 class="text-left domestic_h1">酒店管理系统</h1>
+    <button onclick="login()" type="button" class="btn btn-default btn-info domestic_button">注销</button>
+</div>
+<div class="domestic_div1">
+
+    <div class="domestic_div2">
+        <ul class="domestic_ul">
+            <li>
+                <a id="a1" >入住登记</a>
+                <ul id="u1" style="display: none">
+                    <li><a href="/moduleone/tbRoom/roomQuery" target="iframe_a" id="a2">显示客房状态信息</a></li>
+                    <li><a id="a3">客户详细信息登记</a></li>
+                    <li><a id="a4">客户入住登记</a></li>
+                </ul>
+            </li>
+            <li><a href="static/checkinIem/reserve.html" target="iframe_a">结账</a></li>
+            <li><a href="static/checkinIem/test.html" target="iframe_a">预定</a></li>
+            <li><a href="static/checkinIem/test.html" target="iframe_a">客户管理</a></li>
+            <li><a href="static/checkinIem/test.html" target="iframe_a">业务统计</a></li>
+        </ul>
+    </div>
+
+    <div class="domestic_div3">
+        <iframe style="width: 790px;height: 740px" name="iframe_a"></iframe>
+    </div>
+    <div class="domestic_div3">
+        <iframe style="width: 790px;height: 740px" name="iframe_b"></iframe>
+    </div>
+</div>
 </body>
+<script>
+    function login() {
+        window.location = "login"
+    }
+    $(function(){
+        $('#a1').click(function(){　　//点击a标签
+            if($('#u1').is(':hidden')){　　//如果当前隐藏
+                $('#u1').show();　　//那么就显示div
+            }else{　　//否则
+                $('#u1').hide();　　//就隐藏div
+            }
+        })
+    })
+</script>
+</html>

@@ -1,4 +1,65 @@
-.title{
+.title {
     text-align: center;
     margin-top: 200px;
 }
+
+.domestic_div {
+    border: 0px green solid;
+    position: relative;
+    top: 100px;
+}
+
+.domestic_div1 {
+    border: 0px red solid;
+    position: relative;
+    top: 100px;
+    float: left;
+    height: 760px;
+    width: 100%;
+
+}
+
+.domestic_div2 {
+    border: 0px black solid;
+    width: 300px;
+    height: 750px;
+    float: left;
+}
+
+.domestic_div3 {
+    border: 1px green solid;
+    width: 800px;
+    height: 750px;
+    float: left;
+}
+
+.domestic_button {
+    float: right;
+    margin-right: 400px;
+}
+
+.domestic_h1 {
+    margin-left: 500px;
+}
+
+li {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.domestic_ul {
+    margin-top: 100px;
+    font-size: 20px;
+    margin-left: 40px;
+}
+
+a {
+    text-decoration:underline;
+    cursor: pointer;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+

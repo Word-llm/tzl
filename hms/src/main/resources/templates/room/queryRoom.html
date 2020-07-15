@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>主页</title>
+    <link type="text/css" rel="stylesheet" href="../../static/css/login.css">
+</head>
+<body>
+    <tr th:each="room : ${list}">
+        <div style="float: left;border:1px black solid;margin-left: 45px;">
+            <img th:src="'../../static/images/'+${room.rmPicture}"/>
+            <p style="margin-left: 45px" th:text="${room.rmId}"></p>
+        </div>
+    </tr>
+</body>

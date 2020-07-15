@@ -1,6 +1,7 @@
 package com.tzl.hms.moduleone.entity;
 
 import java.math.BigDecimal;
+
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
@@ -11,7 +12,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author xzh
@@ -21,16 +22,16 @@ import java.io.Serializable;
 @TableName(value = "tb_room")
 public class TbRoom extends Model<TbRoom> {
 
-    private static final long serialVersionUID=1L;
+    private static final long serialVersionUID = 1L;
 
     /**
      * 客房状态
      */
-    public static final String[] STATES = {"空闲","预定","租用","结账","清洁","锁房"};
+    public static final String[] STATES = {"空闲", "预定", "租用", "结账", "清洁", "锁房"};
     /**
      * 客房颜色状态数组
      */
-    public static final String[] COLORSTATES = {"#008CD2","#FF7D00","#FFE000","#E40090","#00AF4D","#E80033"};
+    public static final String[] COLORSTATES = {"#008CD2", "#FF7D00", "#FFE000", "#E40090", "#00AF4D", "#E80033"};
     public static final Integer STATE_VACANT = 0;   //空闲状态
     public static final Integer STATE_RESERVED = 1; //预定状态
     public static final Integer STATE_RENTED = 2;   //租用状态
@@ -78,7 +79,7 @@ public class TbRoom extends Model<TbRoom> {
     /**
      * 房间类别
      */
-    private BigDecimal rmCatalog;
+    private String rmCatalog;
 
     /**
      * 房间图片
@@ -147,11 +148,11 @@ public class TbRoom extends Model<TbRoom> {
         this.rmAvailable = rmAvailable;
     }
 
-    public BigDecimal getRmCatalog() {
+    public String getRmCatalog() {
         return rmCatalog;
     }
 
-    public void setRmCatalog(BigDecimal rmCatalog) {
+    public void setRmCatalog(String rmCatalog) {
         this.rmCatalog = rmCatalog;
     }
 
@@ -179,16 +180,16 @@ public class TbRoom extends Model<TbRoom> {
     @Override
     public String toString() {
         return "TbRoom{" +
-        "rmId=" + rmId +
-        ", rmArea=" + rmArea +
-        ", rmFloor=" + rmFloor +
-        ", rmPrctPrice=" + rmPrctPrice +
-        ", rmTelphone=" + rmTelphone +
-        ", rmState=" + rmState +
-        ", rmAvailable=" + rmAvailable +
-        ", rmCatalog=" + rmCatalog +
-        ", rmPicture=" + rmPicture +
-        ", rmPrctDiscount=" + rmPrctDiscount +
-        "}";
+                "rmId=" + rmId +
+                ", rmArea=" + rmArea +
+                ", rmFloor=" + rmFloor +
+                ", rmPrctPrice=" + rmPrctPrice +
+                ", rmTelphone=" + rmTelphone +
+                ", rmState=" + rmState +
+                ", rmAvailable=" + rmAvailable +
+                ", rmCatalog=" + rmCatalog +
+                ", rmPicture=" + rmPicture +
+                ", rmPrctDiscount=" + rmPrctDiscount +
+                "}";
     }
 }

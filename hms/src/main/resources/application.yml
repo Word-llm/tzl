@@ -2,6 +2,8 @@
 server:
   port: 8080
 spring:
+  mvc:
+    static-path-pattern: static/** #默认为/**，就是访问静态资源不需要加上static
   # 配置数据源
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -11,8 +13,6 @@ spring:
   #配置开发环境
   profiles:
     active: dev
-#  mvc:
-#    static-path-pattern: static/**
   resources:
     static-locations: classpath:/static/,classpath:/templates/
 #  #声明thymeleaf使用非严格的html。

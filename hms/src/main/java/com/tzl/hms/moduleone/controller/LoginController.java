@@ -25,19 +25,35 @@ public class LoginController {
      *
      * @return
      */
-    @RequestMapping({"/JavaPrj_9", ""})
+    @RequestMapping({"/JavaPrj_9", "","/login"})
     public String loginMethod() {
-        return "administrator";
+        return "frame/login";
     }
 
 
 
 
+    /**
+     * 跳转普通用户管理页面
+     *
+     * @return
+     */
+    @RequestMapping("/domestic")
+    public String domestic() {
+        return "frame/domestic";
+    }
 
 
 
-
-
+    /**
+     * 跳转管理员管理页面
+     *
+     * @return
+     */
+    @RequestMapping("/administrator")
+    public String administrator() {
+        return "frame/administrator";
+    }
 
 
 
