@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>增加新用户页面</title>
+</head>
+<body>
+<form action="insertuser" method="post">
+    用户名 <input name="username"><br>
+    登录密码 <input name="password"><br>
+    性别（fales男 true女） <input name="sex"><br>
+    生日<input th:type="date" name="birthday"><br>
+    是否为管理(fales 不是 true 是)<input name="isadmin"><br>
+    人员简介 <input name="content"><br>
+    <input type="submit" value="增加">
+</form>
+</body>
+</html>

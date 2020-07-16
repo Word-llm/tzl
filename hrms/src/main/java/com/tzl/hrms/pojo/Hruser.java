@@ -1,15 +1,14 @@
 package com.tzl.hrms.pojo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
-import com.baomidou.mybatisplus.annotation.TableId;
-
 import javax.persistence.Entity;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -34,14 +33,19 @@ public class Hruser extends Model<Hruser> {
 
     private Boolean sex;
 
-    private LocalDate birthday;
-
-    private LocalDate createtime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date birthday;
+    //字段添加填充内容
+    @TableField(fill = FieldFill.INSERT)
+    private Date createtime;
 
     private Boolean isadmin;
 
     private String content;
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public Integer getId() {
         return id;
@@ -75,19 +79,19 @@ public class Hruser extends Model<Hruser> {
         this.sex = sex;
     }
 
-    public LocalDate getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
-    public LocalDate getCreatetime() {
+    public Date getCreatetime() {
         return createtime;
     }
 
-    public void setCreatetime(LocalDate createtime) {
+    public void setCreatetime(Date createtime) {
         this.createtime = createtime;
     }
 
@@ -108,21 +112,16 @@ public class Hruser extends Model<Hruser> {
     }
 
     @Override
-    protected Serializable pkVal() {
-        return this.id;
-    }
-
-    @Override
     public String toString() {
         return "Hruser{" +
                 "id=" + id +
-                ", username=" + username +
-                ", password=" + password +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
                 ", sex=" + sex +
                 ", birthday=" + birthday +
                 ", createtime=" + createtime +
                 ", isadmin=" + isadmin +
-                ", content=" + content +
-                "}";
+                ", content='" + content + '\'' +
+                '}';
     }
 }

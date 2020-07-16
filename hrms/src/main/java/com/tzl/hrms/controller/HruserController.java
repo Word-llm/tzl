@@ -5,12 +5,10 @@ import com.tzl.hrms.pojo.Hruser;
 import com.tzl.hrms.service.HruserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * <p>
@@ -29,8 +27,42 @@ public class HruserController {
     @RequestMapping("/user")
     public ModelAndView czym() {
         ModelAndView m = new ModelAndView();
+        m.addObject("userlist", hr.list());
         m.setViewName("user");
         return m;
+    }
+
+    @RequestMapping("/add")
+    public ModelAndView add() {
+        ModelAndView m = new ModelAndView();
+        m.setViewName("userinsert");
+        return m;
+    }
+
+    @RequestMapping("/insertuser")
+    public ModelAndView insert(Hruser user) {
+        hr.save(user);
+        return czym();
+    }
+
+    @RequestMapping("/update")
+    public ModelAndView update(Hruser hruser) {
+        ModelAndView m = new ModelAndView();
+        m.addObject("hruser", hruser);
+        m.setViewName("userupdate");
+        return m;
+    }
+
+    @RequestMapping("/userupdate")
+    public ModelAndView userupdate(Hruser user) {
+        hr.updateById(user);
+        return czym();
+    }
+
+    @RequestMapping("/delete")
+    public ModelAndView delete(Hruser user) {
+        hr.removeById(user);
+        return czym();
     }
 }
 

@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>人员管理</title>
 </head>
 <body>
+<table border="1" class="list" style="align-content: center">
+    <tr>
+        <td>员工编号</td>
+        <td>用户名</td>
+        <td>登录密码</td>
+        <td>性别（fales男 true女）</td>
+        <td>生日</td>
+        <td>创建时间</td>
+        <td>是否为管理(fales 不是 true 是)</td>
+        <td>人员简介</td>
+    </tr>
+    <tr th:each="booktype : ${userlist}">
+        <td th:text="${booktype.id}"></td>
+        <td th:text="${booktype.username}"></td>
+        <td th:text="${booktype.password}"></td>
+        <td th:text="${booktype.sex}"></td>
+        <td th:text="${booktype.birthday}"></td>
+        <td th:text="${booktype.createtime}"></td>
+        <td th:text="${booktype.isadmin}"></td>
+        <td th:text="${booktype.content}"></td>
+        <td>
+            <form action="update" method="post">
+                <button name="id" th:value="${booktype.id}" type="submit">修改</button>
+            </form>
+        </td>
+        <td>
+            <form action="delete" method="post">
+                <button name="id" th:value="${booktype.id}" type="submit">删除</button>
+            </form>
+        </td>
+    </tr>
+</table>
+<a href="add">增加新用户</a>
 <a href="czym">返回操作首页</a>
 </body>
 </html>
