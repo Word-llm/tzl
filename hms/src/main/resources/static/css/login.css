@@ -27,7 +27,6 @@
 }
 
 .domestic_div3 {
-    border: 1px green solid;
     width: 800px;
     height: 750px;
     float: left;
@@ -35,7 +34,7 @@
 
 .domestic_button {
     float: right;
-    margin-right: 400px;
+    margin-right: 390px;
 }
 
 .domestic_h1 {

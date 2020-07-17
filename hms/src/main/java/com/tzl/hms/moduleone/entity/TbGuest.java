@@ -1,13 +1,14 @@
 package com.tzl.hms.moduleone.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.baomidou.mybatisplus.annotation.TableId;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -92,7 +93,8 @@ public class TbGuest extends Model<TbGuest> {
     /**
      * 创建资料时间
      */
-    private LocalDateTime gtGreateTime;
+    @TableField(fill = FieldFill.INSERT)
+    private Date gtGreateTime;
 
 
     public Integer getGtId() {
@@ -199,11 +201,11 @@ public class TbGuest extends Model<TbGuest> {
         this.gtEmail = gtEmail;
     }
 
-    public LocalDateTime getGtGreateTime() {
+    public Date getGtGreateTime() {
         return gtGreateTime;
     }
 
-    public void setGtGreateTime(LocalDateTime gtGreateTime) {
+    public void setGtGreateTime(Date gtGreateTime) {
         this.gtGreateTime = gtGreateTime;
     }
 

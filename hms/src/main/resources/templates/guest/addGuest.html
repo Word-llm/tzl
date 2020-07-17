@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>主页</title>
+    <script type="text/javascript" src="../../static/js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<h4>入住登记&nbsp;&nbsp;&nbsp;(注：需点击添加表单控件才可以使用)</h4>
+<form action="/moduleone/tbGuest/guestInsert" method="post">
+    姓名：<input readonly type="text" name="gtName"/>&nbsp;&nbsp;&nbsp;性别：
+    <select disabled name="gtGender">
+        <option>男</option>
+        <option>女</option>
+    </select><br><br>
+    证件号：<input readonly type="text" name="gtCardId"/>&nbsp;&nbsp;&nbsp;证件类型：
+    <select disabled name="gtCardCatalog">
+        <option>身份证</option>
+        <option>港澳通行证</option>
+        <option>军人证</option>
+    </select><br><br>
+    国籍：<input readonly type="text" name="gtCountry"/>&nbsp;&nbsp;&nbsp;客人类型：
+    <select disabled name="gtType">
+        <option>普通客人</option>
+        <option>vip客人</option>
+        <option>svip客人</option>
+    </select><br><br>
+    邮编：<input readonly type="text" name="gtZip"/>&nbsp;&nbsp;&nbsp;电话号码：<input readonly type="text" name="gtTelphone"/><br><br>
+    手机号码：<input readonly type="text" name="gtMobile"/>&nbsp;&nbsp;&nbsp;Email：<input readonly type="text" name="gtEmail"/><br><br>
+    家庭住址：<input readonly style="width: 400px" type="text" name="gtAddress"/><br><br>
+    工作单位：<input readonly style="width: 400px" type="text" name="gtCompany"/><br><br>
+    <input style="position: relative;left: 254px;top: 23px" type="submit" value="保存数据">
+</form>
+
+<button style="position: relative;left: 100px;" id="btn1">添加</button>
+<button style="position: relative;left: 130px;" id="btn2">重置</button>
+
+</body>
+<script>
+    $(function () {
+        var url = window.location.href;
+        $("#btn2").click(function () {
+            window.location.href = url;
+        });
+    });
+    $(function () {
+        $("#btn1").click(function () {
+            $("input").each(function () {
+                $(this).removeAttr("readonly");
+            });
+            $("select").each(function () {
+                $(this).removeAttr("disabled");
+            });
+        });
+    });
+</script>
+</html>

@@ -1,6 +1,9 @@
 package com.tzl.hms.moduleone.controller;
 
 
+import com.tzl.hms.moduleone.entity.TbGuest;
+import com.tzl.hms.moduleone.service.TbGuestService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
@@ -18,13 +21,25 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/moduleone/tbGuest")
 public class TbGuestController {
 
+    @Autowired
+    TbGuestService tbGuestService;
+
 
     @RequestMapping("/guestAdd")
-    public ModelAndView guestQuery(){
-        ModelAndView mav = new ModelAndView();
+    public String guestAdd(){
+        return "guest/addGuest";
+    }
 
+    @RequestMapping("/guestInsert")
+    public ModelAndView guestInsert(TbGuest tbGuest){
+        ModelAndView mav = new ModelAndView();
+        System.out.println("tbGuest =========================== " + tbGuest);
+        tbGuestService.save(tbGuest);
+        mav.setViewName("guest/addGuest");
         return mav;
     }
+
+
 
 
 }

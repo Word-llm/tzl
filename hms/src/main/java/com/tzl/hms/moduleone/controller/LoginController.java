@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
+
 /**
  * @author 木头
  * @date 2020/7/10 20:11
@@ -58,7 +60,7 @@ public class LoginController {
      */
     @RequestMapping("/login_checkout")
     public @ResponseBody
-    String loginCheckout(String userName, String password) {
+    String loginCheckout(String userName, String password,HttpSession session) {
         QueryWrapper<TbOperator> wrapper = new QueryWrapper<>();
         wrapper.eq("op_user_name", userName);
         wrapper.eq("op_password", password);
@@ -73,6 +75,7 @@ public class LoginController {
                 return JSONArray.fromObject("['npc']").toString();
             }
         }
+        session.setAttribute("userName",userName);
         if (tbOperator.getOpPrivilege() == 1) {
             return JSONArray.fromObject("['1']").toString();
         } else {
