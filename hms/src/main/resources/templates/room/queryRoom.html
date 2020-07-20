@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8"/>
     <title>主页</title>
-    <link type="text/css" rel="stylesheet" href="../../static/css/login.css">
+    <link type="text/css" rel="stylesheet" href="../../css/login.css">
 </head>
 <body>
     <tr th:each="room : ${list}">
             <div th:if="${room.rmState}==${roomStateTemp}" style="float: left;border:1px gray solid;margin-left: 45px;">
-                <img th:src="'../../static/images/'+${room.rmPicture}"/>
+                <img th:src="'../../images/'+${room.rmPicture}"/>
                 <p style="margin-left: 45px" th:text="${room.rmId}"></p>
             </div>
     </tr>

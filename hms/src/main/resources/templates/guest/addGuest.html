@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8"/>
     <title>主页</title>
-    <script type="text/javascript" src="../../static/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
 </head>
 <body>
 <h4>入住登记&nbsp;&nbsp;&nbsp;(注：需点击添加表单控件才可以使用)</h4>
 <form action="/moduleone/tbGuest/guestInsert" method="post">
     姓名：<input readonly type="text" name="gtName"/>&nbsp;&nbsp;&nbsp;性别：
     <select disabled name="gtGender">
-        <option>男</option>
+        <option value="男">男</option>
         <option>女</option>
     </select><br><br>
     证件号：<input readonly type="text" name="gtCardId"/>&nbsp;&nbsp;&nbsp;证件类型：
     <select disabled name="gtCardCatalog">
-        <option>身份证</option>
+        <option value="身份证">身份证</option>
         <option>港澳通行证</option>
         <option>军人证</option>
     </select><br><br>
     国籍：<input readonly type="text" name="gtCountry"/>&nbsp;&nbsp;&nbsp;客人类型：
     <select disabled name="gtType">
-        <option>普通客人</option>
+        <option value="普通客人">普通客人</option>
         <option>vip客人</option>
         <option>svip客人</option>
     </select><br><br>
@@ -38,9 +38,12 @@
 </body>
 <script>
     $(function () {
-        var url = window.location.href;
         $("#btn2").click(function () {
-            window.location.href = url;
+            $("input").each(function (index) {
+                if(index!=9){
+                    $(this).val("");
+                }
+            });
         });
     });
     $(function () {
